@@ -1,7 +1,9 @@
 # Grow-Platform
 
-To get started:
-git clone https://github.com/Jeanssk/Grow-Platform.git
+This platform connects vegetables & fruits growers with buyers. It's local, it's good, it's better!
 
-the simplest github guide, no deep shit as they say: 
+
+Repository address: https://github.com/Jeanssk/Grow-Platform.git
+
+Primers on Git:
 http://rogerdudler.github.io/git-guide/
