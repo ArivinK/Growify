@@ -10,7 +10,7 @@ module.exports = {
      *	@return cb(err)
      **/
     connect: (cb) => {
-        MongoClient.connect('mongodb://jean:psss@ds017185.mlab.com:17185/grow-project', (err, database, cb) => {
+        MongoClient.connect('mongodb://jean:psss@ds017185.mlab.com:17185/grow-project', (err, database) => {
             if (err) {
                 cb(err);
             } else {
