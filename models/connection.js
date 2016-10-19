@@ -9,7 +9,7 @@ module.exports = {
      *	@param cb
      *	@return cb(err)
      **/
-    connect: (cb) => {
+     connect: (cb) => {
         MongoClient.connect('mongodb://jean:psss@ds017185.mlab.com:17185/grow-project', (err, database) => {
             if (err) {
                 cb(err);
@@ -25,7 +25,7 @@ module.exports = {
      *	@param cb
      *	@return cb(err)
      **/
-    disconnect: (cb) => {
+     disconnect: (cb) => {
         db.close((err) => {
             (err) ? cb(err): cb(null);
         });
@@ -36,7 +36,7 @@ module.exports = {
      *	@param cb
      *	@return cb(err)
      **/
-    isConnected: (cb) => {
+     isConnected: (cb) => {
         db.collection('stock').find().toArray((err, results) => {
             (err) ? cb(err): cb(null);
         })
@@ -49,8 +49,8 @@ module.exports = {
      *	@param cb(err,res)
      *	@return cb(err)
      **/
-    saveToDb: (collection, obj, cb) => {
-        db.collection(collection).save(obj, (err, cb) => {
+     saveToDb: (collection, obj, cb) => {
+        db.collection(collection).save(obj, (err, res) => {
             (err) ? cb(err): cb(null);
         })
     },
@@ -62,11 +62,10 @@ module.exports = {
      *	@param id 
      *	@return cb(err,res{})
      **/
-    get: (collection, id, cb) => {
-        db.collection(collection).findOne({
-            "_id": id
-        }).toArray((err, results) => {
-            (err) ? cb(err): cb(null, results[0]);
+     get: (collection, id, cb) => {
+        db.collection(collection).find({"_id": id}).toArray((err, results) => {
+            console.log(results);
+            (err) ? cb(err): cb(null, results);
         })
     },
 
@@ -76,7 +75,7 @@ module.exports = {
      *	@param collection
      *	@return cb(err,res[])
      **/
-    getAll: (collection, cb) => {
+     getAll: (collection, cb) => {
         db.collection(collection).find().toArray((err, results) => {
             (err) ? cb(err): cb(null, results)
         })
@@ -90,11 +89,9 @@ module.exports = {
      *	@param id
      *	@return callback(err)
      **/
-    buy: (id, cb) => {
-        db.collection('stock').findOneAndDelete({
-            _id: id
-        }, (err, result) => {
-            (err) ? cb(err): cb(null)
+     buy: (id, cb) => {
+        db.collection('stock').findOneAndDelete({_id: id}, (err, result) => {
+            (err) ? cb(err): cb(null);
         })
     }
 }
