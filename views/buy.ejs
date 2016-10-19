@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Vegetable Community</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	  <link rel="stylesheet" href="style/style.css"/>
+
+  </head>
+  <body>				
+  
+    <div class="productStage">
+        <div class="folderTab clearFix">
+    <div class="breadCrumbs">
+      <a href="#">Home</a>
+      <a href="#">Producer</a>
+      <a href="#">Product</a>
+      <a href="#">Shopping Cart</a>
+    </div></div>
+  <div class="botBorder clearFix">
+      <div class="productImage">
+        <img src="static/images/374380-svetik.jpg" width="300x300">
+          <ul class="imageList">
+            <li><a href="#"><img src="static/images/374380-svetik.jpg" width="150x150"></a></li>
+            <li><a href="#"><img src="static/images/374380-svetik.jpg" width="150x150"></a></li>
+          </ul>
+
+      </div>
+      <div class="overview">
+        <h1>Yum Vegetable</h1>
+        <h2>So Fresh</h2>
+        <span class="rating">
+          <img src="static/images/4_5StarBlue09.gif">
+        </span>
+        <h3>€100.00</h4>
+        <span>Available</span>
+          <select class="prodSelect">
+		  <br>
+            <option selected>Fresh Vegetable</option>
+           <option>Basket 1 </option>
+           <option>Basket 2 </option>
+           <option>Basket  3 </option>
+            <option>Basket 4 </option>
+          </select>
+
+            <div>
+                <form action = "/buy/confirmation/:id" method = "GET">
+                <button id="buy" class="button add">Buy </button>
+                </form>
+            </div>
+      </div>
+     <div class="info">
+          <h3>Product Information</h3>
+          <ul class="specs">
+            <li><h5>description: Some text</h5></li>
+			<li><h5>description: Some text</h5></li>
+			<li><h5>description: Some text</h5></li>
+			<li><h5>description: Some text</h5></li>
+			<li><h5>description: Some text</h5></li>
+          </ul>
+
+    </div>
+</div>
+</body>
+</html>
