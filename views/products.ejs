@@ -36,7 +36,7 @@
                           <span class="prodName"><%= products[i].quantity %></span>
                           <span class="prodPrice"><%= products[i].price %></span>
 
-                      <form action = "/buy/confirmation/:id" method = "GET">
+                      <form action = "/buy/confirmation/<%= products[i]._id%>" method = "GET">
                           <button id="buy" class="button add">Buy</button>
                       </form>
                   </div>

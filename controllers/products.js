@@ -11,7 +11,9 @@ const ObjectID = require('mongodb').ObjectID;
 // })
 
 product.connect((err, result) => {
-    if (err) {console.log (err)};
+    if (err) {
+        console.log(err)
+    };
     console.log("Connected");
 });
 
@@ -21,12 +23,16 @@ router.get('/', (req, res) => {
 })
 
 router.get('/products/', (req, res) => {
-    product.getAll("stock", function(result) {
+    product.getAll('stock', (err, result) => {
+        if (err) {
+            console.log(err)
+        }
         res.render('products.ejs', {
             products: result
-        })
+        });
     })
 })
+
 
 router.get('/buy/:id', (req, res) => {
     product.get("stock", ObjectID(req.params.id), function(result) {
@@ -37,19 +43,19 @@ router.get('/buy/:id', (req, res) => {
 })
 
 router.get('/buy/confirmation/:id', (req, res) => {
-    product.buy(ObjectID(req.params.id), function(result) {
-        res.render('confirmation.ejs', {products: result})
-    })
+    product.get(ObjectID(req.params.id), (err, result) => {
+        if (err) {
+            res.send("error")
+        };
+        res.render('confirmation.ejs', {
+            products: result
+        });
+    });
+    product.buy(ObjectID(req.params.id), (err, result) => {
+        if (err) return res.send(err);
+        res.render('products.ejs');
+
+    };
 })
-
-// router.delete('/buy/confirmation/:id', (req, res) => {
-//     product.findOneAndDelete({
-//         "_id": id
-//     }, (err, result) => {
-//         if (err) return res.send(err)
-//         res.render('products.ejs')
-
-//     })
-// })
 
 module.exports = router
