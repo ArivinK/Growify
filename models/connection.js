@@ -64,7 +64,6 @@ module.exports = {
      **/
      get: (collection, id, cb) => {
         db.collection(collection).find({"_id": id}).toArray((err, results) => {
-            console.log(results);
             (err) ? cb(err): cb(null, results[0]);
         })
     },

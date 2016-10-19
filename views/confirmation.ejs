@@ -1,50 +1,31 @@
-<!DOCTYPE HTML>
+<% include header%>				
+<div class="productStage">
 
-<html>
-	<head>
-		<title>Vegetable Community</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-	  <link rel="stylesheet" href="style/style.css"/>
+      <div class="botBorder clearFix">
+            <div class="productImage">
+                  <img src="static/images/374380-svetik.jpg" width="300x300">
+                  <ul class="imageList">
+                        <li><a href="#"><img src="static/images/374380-svetik.jpg" width="150x150"></a></li>
+                        <li><a href="#"><img src="static/images/374380-svetik.jpg" width="150x150"></a></li>
+                  </ul>
+            </div>
+            <div class="overview">
+                  <h2>Thank you for your purchase!</h2>
+                  <h3>Your order has been confirmed</h3>
 
-    </head>
-  <body>				
-  
-    <div class="productStage">
-        <div class="folderTab clearFix">
-    <div class="breadCrumbs">
-      <a href="#">Home</a>
-      <a href="#">Producer</a>
-      <a href="#">Product</a>
-      <a href="#">Confirmation</a>
-    </div></div>
-  <div class="botBorder clearFix">
-      <div class="productImage">
-        <img src="static/images/374380-svetik.jpg" width="300x300">
-          <ul class="imageList">
-            <li><a href="#"><img src="static/images/374380-svetik.jpg" width="150x150"></a></li>
-            <li><a href="#"><img src="static/images/374380-svetik.jpg" width="150x150"></a></li>
+                  <h3>Price: € <%= products.price %></h3>
+                  <h3>Quantity: <%= products.quantity %></h3>
+                  <h3>Producer: <%= products.seller_id %></h3>
+                  <span class="description">
+                        We will notify you when your basket is dispatched
+                  </span>
 
-          </ul>
+                  <form action='/buy/confirmation/<%= products._id %>' method="POST" >
+
+                        <button class ="btn btn-warning">Back</button>
+
+                  </form>
+            </div>     
       </div>
-      <div class="overview">
-        <h2>Thank you for your purchase!</h2>
-        <h3>Your order has been confirmed</h3>
-
-        <h3>Price: € <%= products.price %></h3>
-        <h3>Quantity: <%= products.quantity %></h3>
-        <h3>Producer: <%= products.seller_id %></h3>
-        <span class="description">We will notify you when your basket is dispatched</span>
-
-          <form action="/" method="GET" >
-
-              <button class ="btn btn-warning">Back</button>
-
-          </form>
-
-      </div>     
-
-    </div>
 </div>
-</body>
-</html>
+<% include footer %>
