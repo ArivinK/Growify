@@ -1,0 +1,29 @@
+{
+  "name": "grow-platform",
+  "version": "1.0.0",
+  "description": "This platform connects vegetables & fruits growers with buyers. It's local, it's good, it's better!",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jeanssk/Grow-Platform.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jeanssk/Grow-Platform/issues"
+  },
+  "homepage": "https://github.com/Jeanssk/Grow-Platform#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "mongodb": "^2.2.10"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
