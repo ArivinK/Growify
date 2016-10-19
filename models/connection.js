@@ -26,7 +26,7 @@ module.exports = {
      *	@return cb(err)
      **/
     disconnect: (cb) => {
-        db.close((err, cb) => {
+        db.close((err) => {
             (err) ? cb(err): cb(null);
         });
     },
