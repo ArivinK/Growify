@@ -18,127 +18,134 @@
 		<div class="breadCrumbs">
 			<a href="/">Home</a>
 			<a href="/">Producer</a>
-			<a href="/products">Product</a>
+			<a href="/products">Products</a>
 		</div>
 	</div>
+	
 
-<div class="productStage">
+	<div class="productStage">
 
 
-	<div class="botBorder clearFix">
+		<div class="botBorder clearFix">
+			<!-- -------------------------------------- -->
+			<%for(var l=0; l<locations.length; l++){%>
+			<div class="info">
+				<h3><%=locations[l]%></h3>
 
-		<div class="info">
-			<h3>Baskets</h3>
+				<div class="pictures">
 
-			<div class="pictures">
+					<div class="location">
+						<%for(var i=0; i<products.length; i++) {
+							if(products[i].location === locations[l]){%>
 
-				<% for(var i=0; i<products.length; i++) {%>
-				<div class="product vtop soft">
-					<div>
+							<div class="product vtop soft">
+								<div>
 
-						<div>
-							<img class = "img" src="images/374380-svetik.jpg" width="150x150">
-						</div>
-						<span class="manuName">
-							<%= products[i].seller_id %>
-						</span>
-						<span class="prodName">
-							<%= products[i].quantity %>
-						</span>
-						<span class="prodPrice">
-							<%= products[i].price %>
-						</span>
-						<span class="location">
-							<%= products[i].location %>
-						</span>
+									<div>
+										<img class = "img" src="images/374380-svetik.jpg" width="150x150">
+									</div>
+									<span class="manuName">
+										<%= products[i].seller_id %>
+									</span>
+									<span class="prodName">
+										<%= products[i].quantity %>
+									</span>
+									<span class="prodPrice">
+										<%= products[i].price %>
+									</span>
+									
 
-						<form action="/buy/<%=products[i]._id%>" method="GET">
-							<button id="buy" class="button add">Buy</button>
-						</form>
+									<form action="/buy/<%=products[i]._id%>" method="GET">
+										<button id="buy" class="button add">Buy</button>
+									</form>
+								</div>
+							</div>
+							<%}
+						}%>
+					</div>
+
+				</div>
+			</div>
+			<%}%>
+			<!-- -------------------------------------- -->
+			<div class="info">
+				<h3>Product Reviews</h3>
+
+				<div class="review">
+					<span class="title">
+						A favorite<br>
+						<img class="stars" src="images/4_5StarBlue09.gif">
+					</span>
+					<span class="comments">
+						This is my go-to, workhorse yarn. It comes in a zillion colors, is fairly soft to touch better with a soak, and holds up well over time. Definitely a tried and true standard.
+					</span>
+					<span class="author">
+						By kaitmurphy  on April 11, 2014
+					</span>
+
+					<div class="vote">
+						Was this review helpful?
+						<input type="submit" value="Yes">
 					</div>
 				</div>
-				<% } %>
-			</div>
-		</div>
 
-		<div class="info">
-			<h3>Product Reviews</h3>
+				<div class="review">
+					<span class="title">
+						Great Felting Yarn!<br>
+						<img class="stars" src="images/4_5StarBlue09.gif">
+					</span>
 
-			<div class="review">
-				<span class="title">
-					A favorite<br>
+					<span class="comments">
+						Noni's Patterns call the Cascade 220 in many of her patterns becuase of it's felting qualities. It is a lovely yarn to work with.
+					</span>
+
+					<span class="author">
+						By lulu5156 on December 31, 2013
+					</span>
+
+					<div class="vote">
+						Was this review helpful?
+						<input type="submit" value="Yes">
+					</div>
+				</div>
+
+				<div class="review">
+					<span class="title">
+						A little rough but nice!
+					</span>
+					<br>
 					<img class="stars" src="images/4_5StarBlue09.gif">
-				</span>
-				<span class="comments">
-					This is my go-to, workhorse yarn. It comes in a zillion colors, is fairly soft to touch better with a soak, and holds up well over time. Definitely a tried and true standard.
-				</span>
-				<span class="author">
-					By kaitmurphy  on April 11, 2014
-				</span>
 
-				<div class="vote">
-					Was this review helpful?
-					<input type="submit" value="Yes">
+					<span class="comments">
+						I made a mistake in ordering this because I was meaning to order the superwash, which is much softer. But, that being said, this is nice yarn and is easy to work with.Colors were true to the website photos.
+					</span>
+
+					<span class="author">
+						By Lucky67 on August 27, 2013
+					</span>
+
+					<div class="vote">
+						Was this review helpful?
+						<input type="submit" value="Yes">
+					</div>
 				</div>
+
+				<div class="button bd submit right">Read More Reviews</div>
+				<div class="button submit blueSubmit left">Write a Review</div>
 			</div>
 
-			<div class="review">
-				<span class="title">
-					Great Felting Yarn!<br>
-					<img class="stars" src="images/4_5StarBlue09.gif">
-				</span>
-
-				<span class="comments">
-					Noni's Patterns call the Cascade 220 in many of her patterns becuase of it's felting qualities. It is a lovely yarn to work with.
-				</span>
-
-				<span class="author">
-					By lulu5156 on December 31, 2013
-				</span>
-
-				<div class="vote">
-					Was this review helpful?
-					<input type="submit" value="Yes">
-				</div>
-			</div>
-
-			<div class="review">
-				<span class="title">
-					A little rough but nice!
-				</span>
-				<br>
-				<img class="stars" src="images/4_5StarBlue09.gif">
-
-				<span class="comments">
-					I made a mistake in ordering this because I was meaning to order the superwash, which is much softer. But, that being said, this is nice yarn and is easy to work with.Colors were true to the website photos.
-				</span>
-
-				<span class="author">
-					By Lucky67 on August 27, 2013
-				</span>
-
-				<div class="vote">
-					Was this review helpful?
-					<input type="submit" value="Yes">
-				</div>
-			</div>
-
-			<div class="button bd submit right">Read More Reviews</div>
-			<div class="button submit blueSubmit left">Write a Review</div>
 		</div>
-
 	</div>
-</div>
 
-<!-- The Modal -->
-<div id="myModal" class="modal">
-	<span class="close">×</span>
-	<img class="modal-content" id="img01">
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
+		<span class="close">×</span>
+		<img class="modal-content" id="img01">
 
-	<div id="caption">
-		<!-- missing something here(?) -->
+		<div id="caption">
+			<!-- missing something here(?) -->
+		</div>
 	</div>
-</div>
 
 	<!-- make sure that script tag can be used inside ejs template -->
 	<script>

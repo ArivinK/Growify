@@ -15,11 +15,12 @@ router.get('/', (req, res) => {
     res.redirect('/products');
 })
 
-router.get('/products/', (req, res) => {
+router.get('/products', (req, res) => {
     product.getAll('stock', (err, result) => {
         if (err) 
             return console.log(err);
-        res.render('products.ejs', {products: result});
+        res.render('products.ejs', {products: result, 
+            locations : getLocations(result)});
     })
 })
 
@@ -52,5 +53,14 @@ router.post('/buy/confirmation/:id', (req, res) => {
     })
 
 })
+
+function getLocations(result){
+    var locations = [];
+    for (var i = 0; i<result.length ; i++) {
+        if(locations.indexOf(result[i].location) === -1)
+            locations.push(result[i].location)
+    }
+    return locations;
+}
 
 module.exports = router;
