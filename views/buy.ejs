@@ -1,4 +1,28 @@
-<% include header %>
+<!DOCTYPE HTML>
+
+<html>
+<head>
+        <title>Vegetable Community</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+
+
+</head>
+<body>        
+        <header>
+                <img id="logo" src="images/grow.jpg" width="150x150">
+        </header>
+
+        <div class="folderTab clearFix">
+                <div class="breadCrumbs">
+                        <a href="/">Home</a>
+                        <a href="/">Producer</a>
+                        <a href="/products">Product</a>
+                </div>
+        </div>
+
+
 <div class="productStage">
 
         <div class="botBorder clearFix">
@@ -18,6 +42,7 @@
                         <h3>Price: € <%= products.price %></h3>
                         <h3>Quantity: <%= products.quantity %></h3>
                         <h3>Producer: <%= products.seller_id %></h3>
+                        <h3>Location: <%= products.location %></h3>
                         <span>Available</span>
 
                         <select class="prodSelect">
@@ -47,4 +72,31 @@
                 </div>
         </div>
 </div>
-<% include footer %>
+
+        <!-- make sure that script tag can be used inside ejs template -->
+        <script>
+                // Get the modal
+                var modal = document.getElementById('myModal');
+                var imgs = document.getElementsByClassName('img');
+                // Get the image and insert it inside the modal - use its "alt" text as a caption
+
+                for(indx in [].slice.call(imgs)){
+                        var modalImg = document.getElementById("img01");
+                        var captionText = document.getElementById("caption");
+                        imgs[indx].onclick = function () {
+                                modal.style.display = "block";
+                                modalImg.src = this.src;
+                                captionText.innerHTML = this.alt;
+                        }
+
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function () {
+                        modal.style.display = "none";
+                }
+
+        </script>
+</body>
+</html>

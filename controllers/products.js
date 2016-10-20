@@ -31,6 +31,8 @@ router.get('/buy/:id', (req, res) => {
     })
 })
 
+
+
 router.get('/buy/confirmation/:id', (req, res) => {
     product.get('stock',ObjectID(req.params.id), (err, result) => {
         if (err) 
