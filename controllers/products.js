@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
 router.get('/products/', (req, res) => {
     product.getAll('stock', (err, result) => {
         if (err) 
-            console.log(err);
+            return console.log(err);
         res.render('products.ejs', {products: result});
     })
 })
@@ -26,7 +26,7 @@ router.get('/products/', (req, res) => {
 router.get('/buy/:id', (req, res) => {
     product.get('stock',ObjectID(req.params.id), (err, result) => {
         if (err) 
-            console.log(err);
+            return console.log(err);
         res.render('buy.ejs', {products: result});
     })
 })
@@ -34,7 +34,7 @@ router.get('/buy/:id', (req, res) => {
 router.get('/buy/confirmation/:id', (req, res) => {
     product.get('stock',ObjectID(req.params.id), (err, result) => {
         if (err) 
-            console.log(err);
+            return console.log(err);
         res.render('confirmation.ejs', {products: result});
     })
 
@@ -44,7 +44,7 @@ router.get('/buy/confirmation/:id', (req, res) => {
 router.post('/buy/confirmation/:id', (req, res) => {
     product.buy(ObjectID(req.params.id), (err, result) => {
         if (err) 
-            console.log(err);
+            return console.log(err);
         console.log('deleted');
         res.redirect('/');
     })
