@@ -12,7 +12,11 @@ product.connect((err, result) => {
 
 
 router.get('/', (req, res) => {
-    res.redirect('/products');
+    res.render('loader.ejs');
+})
+
+router.get('/index', (req, res) => {
+    res.render('index.ejs');
 })
 
 router.get('/products', (req, res) => {

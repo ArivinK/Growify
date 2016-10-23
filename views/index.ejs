@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+	<title>Vegetable Community</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+
+	<!--bootstrap mobile-first-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>        
+	<header>
+		<!-- Logo-->
+		<div class="folderTab clearFix">
+		<img id="logo" src="images/grow.jpg" width="200">
+			<div class="breadCrumbs">
+				<a href="/">Home</a>
+				<a href="/">Producer</a>
+				<a href="/products">Product</a>
+				<a href="/products">About</a>
+				<a href="/products">Contact</a>
+			</div>
+		</div>
+	</header>
+
+	<div class="container" id="index-text"> 
+		<div class="row">
+			<div class ="col-md-4">
+				<div class="page-header">
+
+		
+
+				</div>
+
+				<div>
+					<p>By 2030 two-thirds of the world population will be living in cities. This fact will go along with a significant challenge in sustainable food retail. A large part of the food will have to be shipped from outside the cities, causing a lot of CO2 along the way. Grow strongly believes that our food needs to supplied again from within our cities. Therefore it supports the development of urban agriculture. </p>
+				</div>
+				<div>
+					<p>Grow is a peer-to-peer platform providing fresh, local and seasonal vegetables in the cities. It brings vegetables gardeners and people willing to eat locally together. Moreover, Grow ensures chemical-free products and a CO2- free delivery. </p>
+				</div>
+				<div>
+					<p>Grow also support people in starting their own vegetable garden. It doesn’t take a lot to get started; you only need a couple of square meters in your garden, on your terrace, or… on your rooftop!</p>
+				</div>
+			</div>
+			<div class="col-md-8">
+				<img id="homepage-image" src="images/roof.jpg" >
+			</div>
+		</div>
+	</div>
+	
+
+
+
+	<!-- make sure that script tag can be used inside ejs template -->
+	<script>
+                // Get the modal
+                var modal = document.getElementById('myModal');
+                var imgs = document.getElementsByClassName('img');
+                // Get the image and insert it inside the modal - use its "alt" text as a caption
+
+                for(indx in [].slice.call(imgs)){
+                	var modalImg = document.getElementById("img01");
+                	var captionText = document.getElementById("caption");
+                	imgs[indx].onclick = function () {
+                		modal.style.display = "block";
+                		modalImg.src = this.src;
+                		captionText.innerHTML = this.alt;
+                	}
+
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function () {
+                	modal.style.display = "none";
+                }
+
+            </script>
+        </body>
+        </html>
