@@ -25,6 +25,7 @@
     "mongodb": "^2.2.10"
   },
   "devDependencies": {
+    "jasmine": "^2.5.2",
     "nodemon": "^1.11.0"
   }
 }
