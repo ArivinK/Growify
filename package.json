@@ -26,6 +26,7 @@
     "supertest": "^2.0.1"
   },
   "devDependencies": {
+    "jasmine": "^2.5.2",
     "nodemon": "^1.11.0"
   }
 }
