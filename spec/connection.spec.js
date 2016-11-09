@@ -1,15 +1,3 @@
-// describe1 : connect
-// 	it : (should connect to database)
-
-
-
-// describe2 : disconnect
-// 	it: should disconnect 
-
-// describe3: isConnected
-// 	it: is Connected
-
-
 // describe4: saved to databse
 // 	it: should save to DB
 // 	it: should not save if wrong collection named
@@ -31,13 +19,23 @@
 
 const product = require("../models/connection");
 
-describe('check require access', function() {
-	it('should accss the ', function() {
-		expect(product.sayHello()).toBe("hello world");
-	})
-})
+// describe("buy", function () {
+// 	var error = "tt";
+// 	beforeEach(function (done) {
+// 		product.connect((err, result)=>{return err}).done(function (res) {
+// 			error = res;
+// 			done();
+// 		});
+// 	});
 
-describe("establishing the connection to the database", function() {
+// 	it("should be connected", function () {
+// 		console.log(error);
+// 		expect(error).toBeNull;
+// 	});
+
+// });
+
+describe("establish the connection to the database", function() {
 	it("should be connected", function(done) {
 		product.connect((err, result)=>{});
 		setTimeout(function() {
@@ -47,14 +45,73 @@ describe("establishing the connection to the database", function() {
 				})
 				).toBeNull;
 			done();
-		}, 1000);
+		}, 3000);
 	});
 });
 
+describe("this get's the obj ", function() {
+	it("should return the obj", function() {
+		let objToSend = {
+			"seller_id": "42",
+			"quantity": "1",
+			"price": "6"
+		}
+		expect(
+			product.saveToDb('stock',objToSend,(err, result)=>{
+				return err;
+			})
+			).toBeNull;
+	});
+});
 
+// describe("this getAll the obj saved to DB", function() {
+// 	it("should retrieve all array from DB", function() {
 
+// 	});
+// });
+
+// describe('buy', function() {
+// 	it('should return ', function() {
+
+// 	})
 
 // })
+
+// describe("testing buy function", function() {
+// 	it("shud return an error", function(done) {
+
+// 		expect(
+// 			product.buy(ObjectID("580789a3c2bd62429576de3f"),(err, result)=>{
+// 				return "gejgdegdwehdehwehjdje";
+// 			})
+// 			).not.toBe(null);
+
+
+// 	})
+
+// })
+
+
+// describe("buy", function () {
+// 	var error;
+
+// 	beforeEach(function (done) {
+// 		product.buy(ObjectID("580789a3c2bd62429576de3f"),(err, result)=>{
+// 			return "gejgdegdwehdehwehjdje";
+// 		}).done(function (result) {
+// 			error = result;
+// 			console.log(error);
+//             // Invoke the special done callback
+//             done();
+//         });
+// 	});
+
+// 	it("Should have returned JSON if the async call has completed", function () {
+// 		expect(error).toBe("gejgdegdwehdehwehjdje");
+// 	});
+
+// });
+
 
 // describe('saveToDb', function() {
 // 	it('', function() {
@@ -77,12 +134,6 @@ describe("establishing the connection to the database", function() {
 
 // })
 
-// describe('buy', function() {
-// 	it('', function() {
-
-// 	})
-
-// })
 
 // describe('disconnect', function() {
 // 	it('', function() {

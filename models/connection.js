@@ -92,8 +92,5 @@ module.exports = {
         db.collection('stock').findOneAndDelete({_id: id}, (err, result) => {
             (err) ? cb(err): cb(null);
         })
-    },
-    sayHello : () =>{
-        return "hello world";
     }
 }
