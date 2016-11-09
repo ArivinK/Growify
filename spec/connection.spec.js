@@ -19,50 +19,60 @@
 
 const product = require("../models/connection");
 
-// describe("buy", function () {
-// 	var error = "tt";
-// 	beforeEach(function (done) {
-// 		product.connect((err, result)=>{return err}).done(function (res) {
-// 			error = res;
+describe('connect', function () {
+
+	it('should estalish a connection', function(done) {
+		product.connect((error, result) => {
+			expect(error).toBeNull;
+			done();
+		});
+	});
+
+});
+
+describe('isConnected', function () {
+
+	it('should check if connnecte to the db', function(done) {
+		product.isConnected((error, result) => {
+			expect(error).toBeNull;
+			done();
+		});
+	});
+
+});
+
+
+
+
+
+// describe("establish the connection to the database", function() {
+// 	it("should be connected", function(done) {
+// 		product.connect((err, result)=>{});
+// 		setTimeout(function() {
+// 			expect(
+// 				product.isConnected((err, result)=>{
+// 					return err;
+// 				})
+// 				).toBeNull;
 // 			done();
-// 		});
+// 		}, 3000);
 // 	});
-
-// 	it("should be connected", function () {
-// 		console.log(error);
-// 		expect(error).toBeNull;
-// 	});
-
 // });
 
-describe("establish the connection to the database", function() {
-	it("should be connected", function(done) {
-		product.connect((err, result)=>{});
-		setTimeout(function() {
-			expect(
-				product.isConnected((err, result)=>{
-					return err;
-				})
-				).toBeNull;
-			done();
-		}, 3000);
-	});
-});
-
-describe("this get's the obj ", function() {
-	it("should return the obj", function() {
-		let objToSend = {
-			"seller_id": "42",
-			"quantity": "1",
-			"price": "6"
-		}
-		expect(
-			product.saveToDb('stock',objToSend,(err, result)=>{
-				return err;
-			})
-			).toBeNull;
-	});
-});
+// describe("this get's the obj ", function() {
+// 	it("should return the obj", function() {
+// 		let objToSend = {
+// 			"seller_id": "42",
+// 			"quantity": "1",
+// 			"price": "6"
+// 		}
+// 		expect(
+// 			product.saveToDb('stock',objToSend,(err, result)=>{
+// 				return err;
+// 			})
+// 			).toBeNull;
+// 	});
+// });
 
 // describe("this getAll the obj saved to DB", function() {
 // 	it("should retrieve all array from DB", function() {
