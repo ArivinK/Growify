@@ -17,6 +17,7 @@ app.use(controllers);
 
 
 
-app.listen(3000, function() {
+module.exports = app.listen(3000, function() {
   	console.log('listening on 3000');
 });
+
